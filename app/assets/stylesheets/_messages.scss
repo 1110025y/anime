@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper{
+  height: 100vh;
+  background-color: white;
+  .head{
+    height: 17%;
+    &__box{
+      width: 20%;
+      &--title{
+        color: red;
+        font-size: 100px;
+      }
+    }
+  }
+  .main{
+    height: calc(100% - 12%);
+    display: flex;
+    .side{
+      background-color: wheat;
+      width: 20%;
+      padding: 0  0 0 10px;;
+    }
+  }
+}        
