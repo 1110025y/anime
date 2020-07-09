@@ -1,9 +1,39 @@
 .wrapper
+  .line
+    %ul.nav-lists
+      %li 
+      %li メニュー
+      %li スタッフ一覧
+      %li アクセス
+      %li 投稿サイト
   .head
-    .head__box
-      %h1.head__box--title あか
-  .main
-    .side
-    .content
+    .head__left
+      %h1.head__left--title KoRONaDoyo
+      %h1.head__left--while ZeninSyouGO!!
+    .head__right
+      = image_tag src="/assets/01.png", width:"150", height:"120",class: "picture6"
+      .head__right--name 管理人です
+  .main 
+    .main__side
+      .main__side__box
+      .main__side__Contents
+        .main__side__Contents__message
+        = link_to "https://www.facebook.com/", class: "side__Contents__btn" do
+          = image_tag src="/assets/666.jpeg", width:"442", height:"170", class: "picture2"
+          .paragraph1 Twitter
+        = link_to "https://www.facebook.com/", class: "side__Contents__btn2" do
+          = image_tag src="/assets/777.jpg", width:"396", height:"165", class: "picture3"
+          .paragraph2 Twitter
+        = link_to "https://twitter.com/l18cZZ7zxDicomD", class: "side__Contents__btn3" do
+          = image_tag src="/assets/1234.jpg", width:"550", height:"150", class: "picture"
+          = icon('fab', 'twitter', class: "Contents__btn--icon")
+          .paragraph Twitter
+    .main__content
       .image
-        = image_tag src="/assets/2020.jpg", width:"1400", height:"870"
+        = image_tag src="/assets/20203.jpg", width:"1100", height:"780",class: "picture4"
+    .main__right
+      .main__right__above
+      .main__right__middle
+      .main__right__under
+        = link_to "http://localhost:3000/tweets/" do
+          = image_tag src="/assets/5482.jpg", width:"400", height:"380",class: "picture5"

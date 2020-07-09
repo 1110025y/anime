@@ -1,0 +1,14 @@
+.header
+  %h1.header__title
+    %a.header__title--post1{:href => "http://localhost:3000/"} MainPage
+  .header__name
+    %a.header__name--post2{:href => "/tweets/new"} 投稿する
+.content
+  .content__raight
+    = image_tag src="/assets/aaa.jpg", width:"300", height:"900",class: "picture"
+  .contents.row
+    - @tweets.each do |tweet|
+      .content_post{:style => "background-image: url(#{tweet.image});"}
+        %p= tweet.text
+        %span.name
+          = tweet.name
