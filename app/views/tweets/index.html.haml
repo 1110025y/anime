@@ -1,14 +1,32 @@
-.header
-  %h1.header__title
-    %a.header__title--post1{:href => "http://localhost:3000/"} MainPage
-  .header__name
-    %a.header__name--post2{:href => "/tweets/new"} 投稿する
-.content
-  .content__raight
-    = image_tag src="/assets/aaa.jpg", width:"300", height:"900",class: "picture"
-  .contents.row
-    - @tweets.each do |tweet|
-      .content_post{:style => "background-image: url(#{tweet.image});"}
-        %p= tweet.text
-        %span.name
-          = tweet.name
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
+      %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
+    .header__action
+      %a.header__action--post2{:href => "/tweets/new"} 投稿する
+  .neck
+  .content
+    .content__left
+      = image_tag src="", width:"170", height:"930"
+    .content__row
+      - @tweets.each do |tweet|
+        .content_post{:style => "background-image: url(#{tweet.image});"}
+          .content_post__box
+            %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"60", height:"60"
+            .menu
+              .menu-title ▼
+              .sub-menu
+                %ul
+                  %li
+                    = link_to '編集する', edit_tweet_path(tweet.id),  method: :edit
+                  %li
+                    = link_to '削除する', tweet_path(tweet.id),  method: :delete
+                  %li 
+          %p= tweet.text
+          %span.name
+            = tweet.name
+    .content__right
+      = image_tag src="", width:"135", height:"900"
+  .neck
+  .footer

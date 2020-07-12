@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .header{
   background-color: #FF0461;
   height: 9vh;
@@ -7,16 +11,18 @@
   align-items: center;
   justify-content: center;
   &__title{
-    margin-right: 280px;
+    margin-right: 380px;
     &--post1{
       text-decoration: none;
-      font-size: 40px;
+      font-size: 30px;
       border-bottom: 1px solid black;
       color: #fff;
-      text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+      text-shadow: 0 0 3px #000, 0 0 1px #000, 0 0 1px #000;
+      display: block;
+      font-weight: bold;
     }
   }
-  &__name{
+  &__action{
     margin-left: 40px;
     border: 1px solid black;
     padding: 10px 20px;
@@ -31,23 +37,53 @@
     }
   }
 }
+.neck{
+  height: 5%;
+  width: 20%;
+}
+
+.stomach{
+  width: 100%;
+  height: 80%;
+  &__speech{
+    width: 100%;
+    height: 50%;
+    position: relative;
+    left: 27%;
+    top: 20%;
+    font-size: 30px;
+    &--message{
+      position: absolute;
+      top: 80px;
+      left: 15%;
+    }
+  }
+  &__character{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    left: 30%;
+    top: 65%;
+  }
+}
+
 .content{
   display: flex;
-  .contents.row{
-    background-color: white;
-    height: 100vh;
-    width: 60%;
+  &__row{
+    background-color: whitesmoke;
+    height: 90vh;
+    width: 70%;
+    border-radius: 20px 20px 20px 20px / 20px 20px 20px 20px;
     position: relative;
     position: absolute;
-    left: 21%;
+    left: 15%;
     .content_post{
-      height: 400px;
-      margin: 20px 0;
       background-color: white;
       position: absolute;
       position: relative;
-      width: 60%;
-      left: 19%;
+      width: 750px;
+      height: 500px;
+      left: 20%;
       text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
       font-size: 20px;
       color: #fff;
@@ -55,6 +91,119 @@
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       border: 3px solid #ddd;
       text-align: right;
+      margin: 20px 0;
+      .content_post__box{
+        color: white;
+        .pppp{
+          display: block;
+        }
+        .menu {
+          width: 50px;
+          text-align: center;
+          .menu-title {
+            color: black;
+            font-size: 3px;
+          }
+        }
+      }
+    }
+  }
+  &__right{
+    position: absolute;
+    right: 5px;
+  }
+}
+
+
+.container{
+  width: 60%;
+  height: 80vh;
+  background-color: ghostwhite;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 310px;
+  margin-bottom: 20px;
+  border-radius: 20px 20px 20px 20px / 20px 20px 20px 20px;
+  &__box{
+    width: 800px;
+    height: 80%;
+    background-color: white;
+    position: absolute;
+    top: 40px;
+    .container__form{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      &__title{
+        color: white;
+        text-align: center;
+        text-shadow: 0 0 2px #000, 0 0 1px #000, 0 0 1px #000;
+        font-size: 35px;
+        margin: 20px 0;
+        font-weight: bold;
+      }
+      &--personal{
+        height: 60px;
+        width: 70%;
+        font-size: 20px;
+        margin-bottom: 20px;
+        border: 2px solid #880000;
+        border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+        padding-left: 10px;
+      }
+      &--message{
+        width: 70%;
+        height: 60%;
+        font-size: 20px;
+        border: 2px solid #880000;
+        border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+      }
+      &--send{
+        width: 70%;
+        height: 60px;
+        background-color: #FF3399;
+        color: #fff;
+        font-weight: bold;
+        font-size: 25px;
+        border: 2px solid #880000;
+        border-radius: 30px 30px 30px 30px / 30px 30px 30px 30px;
+      }
     }
   }
 }
+.footer{
+  background-color: #FF0461;
+  height: 50px;
+}
+
+
+
+
+
+
+.sub-menu {
+  display: none;
+  background-color: whitesmoke;
+}
+
+.sub-menu > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.sub-menu > ul > li > a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.menu:hover .sub-menu {
+  display: inline-block;
+}
+
