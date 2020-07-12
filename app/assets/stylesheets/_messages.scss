@@ -23,14 +23,13 @@
     }
   }
   .head{
-    height: 9%;
+    height: 8%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     &__left{
-      width: 100%;
-      height: 20%;
-      margin-top: 15px;
+      width: 60%;
+      height: 80px;
       .nav-lists {
         width: 100%;
         padding: 20px;
@@ -40,15 +39,60 @@
       }
     }
     &__right{
-      display: flex;
-      &--name{
-      position: absolute;
-      top: 310px;
-      right: 27px;
-      font-size: 25px;
-      color: #fff;
-      text-shadow: 0 0 20px black, 0 0 40px black, 0 0 4px black;
-      text-orientation: upright;
+      width: 40%;
+      height: 80px;
+      &__contents{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        &--post{
+          text-decoration: none;
+          font-size: 27px;
+          margin-left: 10px;
+          color: #f8f8ff;
+          position: absolute;
+          font-weight: bold;
+          right: 490px;
+          top: 132px;
+          text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
+        }
+        &--post1{
+          text-decoration: none;
+          font-size: 27px;
+          margin-left: 10px;
+          color: #f8f8ff;
+          position: absolute;
+          font-weight: bold;
+          right: 475px;
+          top: 132px;
+          text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
+        }
+        &--post2{
+          text-decoration: none;
+          font-size: 27px;
+          margin-left: 100px;
+          color: #f8f8ff;
+          font-weight: bold;
+          text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
+          position: absolute;
+          top: 132px;
+          right: 133px;
+        }
+        .picture12{
+          position: relative;
+          top: 3px;
+          border-radius: 15px 15px 15px 15px / 15px 15px 15px 15px;
+          border: 1px solid #F0F8FF;
+          
+        }
+        .picture14{
+          position: relative;
+          top: 3px;
+          border-radius: 15px 15px 15px 15px / 15px 15px 15px 15px;
+          border: 1px solid #F0F8FF;
+          margin: 20px;
+        }
       }
     }
   }
@@ -180,6 +224,15 @@
           position: relative;
           top: 60px;
           left: 10px;
+        }
+        &--name{
+          position: absolute;
+          top: 307px;
+          right: 27px;
+          font-size: 25px;
+          color: #fff;
+          text-shadow: 0 0 20px black, 0 0 40px black, 0 0 4px black;
+          text-orientation: upright;
         }
       }
       &__middle{

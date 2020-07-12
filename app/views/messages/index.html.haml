@@ -8,9 +8,19 @@
       %ul.nav-lists
         %li プロフィール(現ユーザー)
         %li スタッフ一覧
-        %li 投稿サイト
     .head__right
-      .head__right--name 管理人です
+      - if user_signed_in?
+        .head__right__contents
+          = image_tag src="/assets/derfrtgtbvvb.jpg", width:"370", height:"68",class: "picture12"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "head__right__contents--post1"
+          = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"370", height:"68",class: "picture14"
+          = link_to  "投稿する", new_tweet_path, method: :get ,class: "head__right__contents--post2"
+      - else
+        .head__right__contents          
+          = image_tag src="/assets/gettyimage.jpg", width:"370", height:"68",class: "picture12"
+          = link_to "ログイン", new_user_session_path, method: :get, class: "head__right__contents--post"
+          = image_tag src="/assets/frfrgtb.jpg", width:"370", height:"68",class: "picture14"
+          = link_to "新規登録", new_user_registration_path, method: :get, class: "head__right__contents--post2"
   .main 
     .main__side
       .main__side__Contents
@@ -35,6 +45,7 @@
         = image_tag src="/assets/01.png", width:"170", height:"180",class: "picture6"
         %p{:style => "color: blue; font-size: 185px;"}
           %i.far.fa-comment.faa-float.animated
+        .main__right__above--name 管理人です
       .main__right__middle
         %p{:style => "color: orange; font-size: 95px;"}
           %i.fas.fa-angle-double-down.faa-bounce.animated
