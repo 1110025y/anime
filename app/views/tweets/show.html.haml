@@ -1,0 +1,26 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
+      %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
+    .header__action
+      %a.header__action--post2{:href => "/tweets"} 投稿一覧に戻る
+  .neck
+  .content
+    .content__show
+      .content_show__post{:style => "background-image: url(#{@tweet.image});"}
+        .content__show_post__box
+          %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"60", height:"60"
+          .menu
+            .menu-title ▼
+            .sub-menu
+              %ul
+                %li
+                  = link_to '編集する', edit_tweet_path(@tweet.id),  method: :get
+                %li
+                  = link_to '削除する', tweet_path(@tweet.id),  method: :delete
+        %p= @tweet.text
+        %span.name
+          = @tweet.name
+  .neck
+  .footer
