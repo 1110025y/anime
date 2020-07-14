@@ -3,18 +3,22 @@
     %h1.header__title
       %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
       %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
-  %h2 Welcome back Our Room！!
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    .field
-      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Name"
-    .field
-      = f.label :password
-      %br/
-      = f.password_field :password, autocomplete: "current-password"
-    - if devise_mapping.rememberable?
-      .field
-        = f.check_box :remember_me
-        = f.label :remember_me
-    .actions
-      = f.submit "Log in"
-  = render "devise/shared/links"
+  .neck
+
+  .log-in__box
+    .log-in__box__form
+      %div{:style => "height:30px;", class: "log-in__box__form__style"}
+        %span#switch_jq.log-in__box__form__style--title Welcome back Our Room！!
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .field
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Name", class: "field__box1"
+        .field
+          = f.password_field :password, autocomplete: "current-password", placeholder: "PassWord", class: "field__box2"
+        - if devise_mapping.rememberable?
+          .field
+            = f.check_box :remember_me
+            = f.label :remember_me
+        .actions
+          = f.submit "Log in", class: "field__submit"
+      = render "devise/shared/links"
+  .footer
