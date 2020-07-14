@@ -13,3 +13,23 @@ $(document).ready(function() {
             $(this).find('.right').animate({ left : 0 },{queue:false,duration:300});
         });             
   });
+
+
+
+// 点滅用クラス
+function func_switch_jq(id){
+    // IDをチェック
+    var $ele = $(id);
+    if($ele.length == 0) return;
+
+    $ele.fadeToggle("fast");
+
+    // 0.5秒後にfunc_switch_jqを再実行
+    setTimeout(function(elemId){
+        func_switch_jq(elemId);
+    }, 500, id);
+}
+
+$(function(){ 
+    func_switch_jq("#switch_jq");
+});
