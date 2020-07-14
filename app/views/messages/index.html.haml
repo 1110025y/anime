@@ -5,9 +5,6 @@
       %p.line__box--title ZeninSyouGO!!
   .head
     .head__left
-      %ul.nav-lists
-        %li プロフィール(現ユーザー)
-        %li スタッフ一覧
     .head__right
       - if user_signed_in?
         .head__right__contents
@@ -27,36 +24,30 @@
         .main__side__Contents__message
         = link_to "https://www.facebook.com/", class: "side__Contents__btn4" do
           = image_tag src="/assets/annko.jpg", width:"480", height:"170", class: "picture4"
-          .paragraph4 Twitter
+          .paragraph4 Profile
         = link_to "https://www.facebook.com/", class: "side__Contents__btn" do
           = image_tag src="/assets/666.jpeg", width:"460", height:"170", class: "picture2"
-          .paragraph1 Twitter
+          .paragraph1 Ranking
         = link_to "https://www.facebook.com/", class: "side__Contents__btn2" do
           = image_tag src="/assets/777.jpg", width:"439", height:"165", class: "picture3"
-          .paragraph2 Twitter
+          .paragraph2 Calendar
         = link_to "https://twitter.com/l18cZZ7zxDicomD", class: "side__Contents__btn3" do
           = image_tag src="/assets/1234.jpg", width:"550", height:"150", class: "picture"
           = icon('fab', 'twitter', class: "Contents__btn--icon")
           .paragraph Twitter
     .main__image
-      = image_tag src="/assets/zzzzz.jpg", width:"970", height:"750",class: "picture10"
+      = image_tag src="/assets/1185012i.jpeg", width:"670", height:"650",class: "picture10"
     .main__right
       .main__right__above
-        = image_tag src="/assets/01.png", width:"170", height:"180",class: "picture6"
-        %p{:style => "color: blue; font-size: 185px;"}
+        %p{:style => "color: blue; font-size: 340px;"}
           %i.far.fa-comment.faa-float.animated
-        .main__right__above--name 管理人です
+        .main__right__above--name 投稿して欲しいな
       .main__right__middle
-        %p{:style => "color: orange; font-size: 95px;"}
-          %i.fas.fa-angle-double-down.faa-bounce.animated
-        %p{:style => "color: orange; font-size: 95px;"}
-          %i.fas.fa-angle-double-down.faa-bounce.animated
-        %p{:style => "color: orange; font-size: 95px;"}
-          %i.fas.fa-angle-double-down.faa-bounce.animated
       .main__right__under
         = link_to "http://localhost:3000/tweets/" do
-          = image_tag src="/assets/zxc.png", width:"330", height:"350",class: "picture5"
+          = image_tag src="/assets/zxc.png", width:"380", height:"350",class: "picture5"
           %p.main__right__under--title1 みんなの投稿
           %p.main__right__under--title2 掲示板
+          
   .footer
 
