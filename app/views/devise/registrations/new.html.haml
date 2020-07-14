@@ -3,9 +3,9 @@
     %h1.header__title
       %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
       %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
-  
   .sign-up__form
-    %h2.sign-up__form__title Welcome to Our Room！!
+    %div{:style => "height:30px;", class: "sign-in__form__style"}
+      %span#switch_jq.sign-up__form__style__title Welcome to Our Room！!
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
       .field
@@ -23,7 +23,6 @@
           = f.password_field :password_confirmation, placeholder: "Password_Confirmation", autocomplete: "new-password", class: "field__contents"
         .actions
           = f.submit "Sign up", class: "field__submit"
-        = render "devise/shared/links"
   
   .box_container
     .images_holder
