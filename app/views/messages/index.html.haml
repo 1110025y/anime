@@ -3,6 +3,13 @@
     .line__box
       %p.line__box--title KoRONaDoyo
       %p.line__box--title ZeninSyouGO!!
+    .line__user
+      - if user_signed_in?
+        .line__user__one
+          %p ユーザー名：
+          %span= current_user.name
+      - else
+        .line__user__one
   .head
     .head__left
     .head__right

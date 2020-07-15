@@ -4,8 +4,22 @@
       %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
       %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
     .header__action
-      %a.header__action--post2{:href => "/tweets/new"} 投稿する
-  .neck
+      - if user_signed_in?
+        .header__action__one
+          %p ユーザー名：
+          %span= current_user.name
+      - else
+        .line__user__one
+  .neck__action
+    .neck__action__box
+      = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"330", height:"75", class: "neck__action__box--picture"
+      = link_to  "投稿する", new_tweet_path, method: :get, class: "neck__action__box--post"
+    .neck__action__mypege
+      - if user_signed_in?
+        = image_tag src="/assets/gettyimages-1655.jpg", width:"330", height:"75", class: "neck__action__mypege--imge"
+        = link_to "マイページ", "/users/#{current_user.id}", class: "neck__action__mypege--post1"
+      - else
+        .line__user__one
   .content
     .content__left
       = image_tag src="", width:"170", height:"930"

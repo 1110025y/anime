@@ -9,17 +9,37 @@
     background-color: #FF0461;
     height: 11vh;
     box-shadow: 5px 5px 20px 5px black;
+    display: flex;
+    justify-content: space-between;
     &__box{
-      width: 16%;
+      width: 17%;
       &--title{
-      font-size: 34px;
+      font-size: 35px;
       border-bottom: 1px solid black;
       color: #fff;
-      text-shadow: 0 0 5px #000, 0 0 1px #000, 0 0 1px #000;
+      text-shadow: 0 0 2px white, 0 0 2px white, 0 0 2px white;
       display: block;
       font-weight: bold;
+      font-style: italic;
       padding-left: 20px;
       }
+    }
+    &__user{
+      width: 50%;
+      font-size: 34px;
+      color: #fff;
+      font-weight: bold;
+      font-style: italic;
+      text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
+      &__one{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        margin-left: 40px;
+      }
+      
     }
   }
   .head{
