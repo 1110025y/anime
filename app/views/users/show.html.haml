@@ -1,8 +1,17 @@
-.contents.row
-  %p
-    = @name
-    さんの投稿一覧
-  - @tweets.each do |tweet|
-    .content_post{:style => "background-image: url(#{tweet.image});"}
-      %p= tweet.text
-      %span.name= tweet.name
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
+      %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
+    .header__action
+      %a.header__action--catalogue{:href => "/tweets"} 投稿一覧に戻る
+  .neck
+
+  .contents.row
+    %p
+      = @name
+      さんの投稿一覧
+    - @tweets.each do |tweet|
+      .content_post{:style => "background-image: url(#{tweet.image});"}
+        %p= tweet.text
+        %span.name= tweet.name
