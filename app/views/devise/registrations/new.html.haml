@@ -10,7 +10,7 @@
       = render "devise/shared/error_messages", resource: resource
       .field
         .field
-          = f.text_field :name, autofocus: true, placeholder: "Name", autocomplete: "name", class: "field__contents"
+          = f.text_field :name, autofocus: true, placeholder: "Name", autocomplete: "name", class: "field__contents", maxlength: "6"
         .field
           = f.email_field :email, autofocus: true, placeholder: "Email", autocomplete: "email", class: "field__contents"
         .field
