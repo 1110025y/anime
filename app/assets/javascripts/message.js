@@ -12,7 +12,7 @@ $(document).ready(function() {
             $(this).find('.left').animate({ right : 0 },{queue:false,duration:300});
             $(this).find('.right').animate({ left : 0 },{queue:false,duration:300});
         });             
-  });
+});
 
 
 
@@ -32,4 +32,11 @@ function func_switch_jq(id){
 
 $(function(){ 
     func_switch_jq("#switch_jq");
+});
+
+
+$(function (){
+    $("#calendar").fullCalendar({
+        height: 960,
+    });    
 });

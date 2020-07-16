@@ -64,7 +64,7 @@
     &--post{
       position: relative;
       top: 16px;
-      left: 90%;
+      left: 87%;
       text-decoration: none;
       font-size: 28px;
       color: #fff;
@@ -89,7 +89,7 @@
       text-decoration: none;
       position: relative;
       top: 16px;
-      left: 115%;
+      left: 110%;
       font-size: 28px;
       color: #fff;
       font-weight: bold;
@@ -303,10 +303,11 @@ li{
   height: 50px;
 }
 
-.footernew{
+.footer-new{
   background-color: #FF0461;
   height: 50px;
-  width: 100;
+  position: relative;
+  bottom: -100%;
 }
 
 
