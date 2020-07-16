@@ -216,7 +216,7 @@
 }
 .ulli1{
   text-decoration: none;
-  color: #ffffff;
+  color: red;
   font-size: 17px;
   list-style: none;
   display: block;
@@ -268,6 +268,13 @@ li{
         border: 2px solid #880000;
         border-radius: 10px 10px 10px 10px / 10px 10px 10px 10px;
         padding-left: 10px;
+        
+      }
+      .input-box__image{
+        position: relative;
+        bottom: 65px;
+        right: -20%;
+
       }
       &--message{
         width: 70%;
@@ -294,6 +301,12 @@ li{
 .footer{
   background-color: #FF0461;
   height: 50px;
+}
+
+.footernew{
+  background-color: #FF0461;
+  height: 50px;
+  width: 100;
 }
 
 
