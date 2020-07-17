@@ -33,10 +33,3 @@ function func_switch_jq(id){
 $(function(){ 
     func_switch_jq("#switch_jq");
 });
-
-
-$(function (){
-    $("#calendar").fullCalendar({
-        height: 960,
-    });    
-});

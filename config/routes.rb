@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'blogs/index'
   devise_for :users
   get 'messages/index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -7,5 +8,6 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
   resources :users, only: [:index, :show]
+  resources :blogs
 
 end
