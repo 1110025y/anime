@@ -1,23 +1,45 @@
-%p#notice= notice
-%h1 自分の日記
-%table
-  %thead
-    %tr
-      %th タイトル
-      %th 時間
-      %th{:colspan => "3"}
-  %tbody
-    - @blogs.each do |blog|
-      %tr
-        %td= blog.title
-        %td= blog.start_time.strftime("%Y-%m-%d %H:%M")
-        %td= link_to 'Show', blog
-        %td= link_to 'Edit', edit_blog_path(blog.id)
-        %td= link_to 'Destroy',blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' }
-%br/
-= link_to '日記をかく', new_blog_path
-= month_calendar events: @blogs do |date, blogs|
-  = date.day
-  - blogs.each do |blog|
-    %div
-      = link_to blog.title, blog
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
+      %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
+    .header__action
+      %a.header__action--catalogue{:href => "/tweets"} 投稿一覧に戻る
+  .content-box
+    .content-box__left
+      .content-box__left--up
+        .content-box__left--up--image
+          %div{:style => "height:30px;", class: "content-box__left--up--image__style"}
+          %span#switch_jq.content-box__left--up--image__style EVENT CALENDAR
+          %p.content-box__left--up--image__style--title 
+            あなたのオススメのイベントを書き込んでね！
+          = image_tag src="/assets/fukidashi_125-1.png", width:"750", height:"550"
+        .content-box__left--up--memo
+          - if user_signed_in?
+            %h1 自分の書き込み
+            %table
+              %thead
+                %tr
+                  %th タイトル
+                  %th 時間
+                  %th{:colspan => "4"}
+              %tbody
+                - @blogs.each do |blog|
+                  %tr
+                    %td= blog.title
+                    %td= blog.start_time.strftime("%Y-%m-%d %H:%M")
+                    %td= link_to 'Show', blog
+                    %td= link_to 'Edit', edit_blog_path(blog.id)
+                    %td= link_to 'Destroy',blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' }
+      .content-box__left--down
+        .content-box__left--down--image
+          = image_tag src="/assets/7002421.jpeg", width:"380", height:"330", class: "picture20"
+        .content-box__left--down--path
+          = link_to '書き込む', new_blog_path, class: "content-box__left--down--path--letter"
+    .content-box__right
+      = month_calendar events: @blogs do |date, blogs|
+        = date.day
+        - blogs.each do |blog|
+          %div
+            = link_to blog.title, blog
+  .footer-blog
