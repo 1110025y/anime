@@ -15,44 +15,42 @@
     .head__right
       - if user_signed_in?
         .head__right__contents
-          = image_tag src="/assets/derfrtgtbvvb.jpg", width:"370", height:"68",class: "picture12"
+          = image_tag src="/assets/derfrtgtbvvb.jpg", width:"370", height:"80",class: "picture12"
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "head__right__contents--post1"
-          = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"370", height:"68",class: "picture14"
+          = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"370", height:"80",class: "picture14"
           = link_to  "投稿する", new_tweet_path, method: :get ,class: "head__right__contents--post2"
       - else
         .head__right__contents          
-          = image_tag src="/assets/gettyimage.jpg", width:"370", height:"68",class: "picture12"
+          = image_tag src="/assets/gettyimage.jpg", width:"370", height:"80",class: "picture12"
           = link_to "ログイン", new_user_session_path, method: :get, class: "head__right__contents--post"
-          = image_tag src="/assets/frfrgtb.jpg", width:"370", height:"68",class: "picture14"
+          = image_tag src="/assets/frfrgtb.jpg", width:"370", height:"80",class: "picture14"
           = link_to "新規登録", new_user_registration_path, method: :get, class: "head__right__contents--post2"
   .main 
     .main__side
       .main__side__Contents
         .main__side__Contents__message
-        = link_to "https://www.facebook.com/", class: "side__Contents__btn4" do
-          = image_tag src="/assets/annko.jpg", width:"480", height:"170", class: "picture4"
-          .paragraph4 Profile
-        = link_to "https://www.facebook.com/", class: "side__Contents__btn" do
-          = image_tag src="/assets/666.jpeg", width:"460", height:"170", class: "picture2"
-          .paragraph1 Ranking
+        = link_to "/blogs", class: "side__Contents__btn4" do
+          = image_tag src="/assets/blank-calendar.jpg", width:"600", height:"380", class: "picture4"
+          = image_tag src="/assets/77443557_220x284.png", width:"140", height:"170", class: "picture5"
+          .paragraph4 EVENT CALENDAR
         = link_to "/blogs", class: "side__Contents__btn2" do
-          = image_tag src="/assets/777.jpg", width:"439", height:"165", class: "picture3"
-          .paragraph2 Calendar
+          = image_tag src="/assets/777.jpg", width:"530", height:"185", class: "picture3"
+          .paragraph2 Profile
         = link_to "https://twitter.com/l18cZZ7zxDicomD", class: "side__Contents__btn3" do
-          = image_tag src="/assets/1234.jpg", width:"550", height:"150", class: "picture"
+          = image_tag src="/assets/1234.jpg", width:"470", height:"150", class: "picture"
           = icon('fab', 'twitter', class: "Contents__btn--icon")
           .paragraph Twitter
     .main__image
-      = image_tag src="/assets/1185012i.jpeg", width:"670", height:"650",class: "picture10"
+      = image_tag src="/assets/1185012i.jpeg", width:"770", height:"750",class: "picture10"
     .main__right
       .main__right__above
         %p{:style => "color: blue; font-size: 340px;"}
           %i.far.fa-comment.faa-float.animated
-        .main__right__above--name 投稿して欲しいな
+        .main__right__above--name 投稿されるかな
       .main__right__middle
       .main__right__under
         = link_to "/tweets" do
-          = image_tag src="/assets/zxc.png", width:"380", height:"350",class: "picture5"
+          = image_tag src="/assets/zxc.png", width:"480", height:"350",class: "picture5"
           %p.main__right__under--title1 みんなの投稿
           %p.main__right__under--title2 掲示板
           

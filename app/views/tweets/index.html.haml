@@ -4,44 +4,79 @@
       %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
       %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
     .header__action
-      - if user_signed_in?
-        .header__action__one
-          %p ユーザー名：
-          %span= current_user.name
-      - else
-        .line__user__one
-  .neck__action
-    .neck__action__box
-      = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"330", height:"75", class: "neck__action__box--picture"
-      = link_to  "投稿する", new_tweet_path, method: :get, class: "neck__action__box--post"
-    .neck__action__mypege
-      - if user_signed_in?
-        = image_tag src="/assets/gettyimages-1655.jpg", width:"330", height:"75", class: "neck__action__mypege--imge"
-        = link_to "マイページ", "/users/#{current_user.id}", class: "neck__action__mypege--post1"
-      - else
-        .line__user__one
+      .header__action__one
+        %a.header__title--post2{:href => "/blogs"} EVENT
+        %a.header__title--post2{:href => "/blogs"} CALENDAR
+    
   .content
     .content__left
-    .content__row
-      - @tweets.each do |tweet|
-        .content_post{:style => "background-image: url(#{tweet.image});"}
-          .content_post__box
-            %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"70", height:"70"
-            .menu
-              .menu-title ▼
-              .sub-menu
-                %ul
-                  %li 
-                    = link_to '詳細表示', tweet_path(tweet.id),  method: :get
-                - if user_signed_in? && current_user.id == tweet.user.id
-                  %li
-                    = link_to '編集する', edit_tweet_path(tweet.id),  method: :get, class: "ulli" 
-                  %li
-                    = link_to '駆逐する', tweet_path(tweet.id),  method: :delete, class: "ulli1" 
-                  
-          %p= tweet.text
-          %span.name
-            %a{:href => "/users/#{tweet.user.id}"}
-              = tweet.user.name
+      .content__left__board
+      .content__left__row
+        - @tweets.each do |tweet|
+          .content__left__row__box
+            .content__left__row__box__text
+              .content__left__row__box__text__div
+                %p.content__left__row__box__text__div__style ユーザー名：
+                %a{:href => "/users/#{tweet.user.id}", class: "content__left__row__box__text__div--name"}
+                  = tweet.user.name
+              %p.content__left__row__box__text--contents
+              %a{:href => "/tweets/#{tweet.id}", class: "content__left__row__box__text--message"}
+                = tweet.text
+            .content__left__row__box__icon
+              %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"70", height:"70"
+              .menu
+                .menu-title ▼
+                .sub-menu
+                  %ul
+                    %li 
+                      = link_to '詳細表示', tweet_path(tweet.id),  method: :get
+                  - if user_signed_in? && current_user.id == tweet.user.id
+                    %li
+                      = link_to '編集する', edit_tweet_path(tweet.id),  method: :get, class: "ulli" 
+                    %li
+                      = link_to '駆逐する', tweet_path(tweet.id),  method: :delete, class: "ulli1" 
     .content__right
-  .footer-new
+      %div{:style => "height:30px;", class: "content__right__style"}
+        %span#switch_jq.content__right__style Post Bulletin Board 
+      %p.content__right--title 
+        下の投稿ボタンから投稿してね！
+      .content__right__head
+        %p{:style => "color: orange; font-size: 100px;"}
+          %i.far.fa-hand-point-down.faa-vertical.animated
+        %p{:style => "color: orange; font-size: 100px;"}
+          %i.far.fa-hand-point-down.faa-vertical.animated
+        %p{:style => "color: orange; font-size: 100px;"}
+          %i.far.fa-hand-point-down.faa-vertical.animated
+        %p{:style => "color: orange; font-size: 100px;"}
+          %i.far.fa-hand-point-down.faa-vertical.animated
+      .content__right__up
+        = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"430", height:"95", class: "content__right__up__picture5"
+        = link_to  "投稿する", new_tweet_path, method: :get ,class: "content__right__up__post"
+      .content__right__down
+        = image_tag src="/assets/1538.png", width:"600", height:"180", class: "content__right__down--picture"
+        = image_tag src="/assets/01507fd3.jpg", width:"400", height:"380", class: "content__right__down--picture1"
+        .div
+          %p{:style => "color: orange; font-size: 70px;"}
+            %i.far.far.fa-star.faa-spin.animated
+          %p{:style => "color: yellow; font-size: 70px;"}
+            %i.far.fas.fa-star.faa-flash.animated
+          %p{:style => "color: orange; font-size: 70px;"}
+            %i.far.far.fa-star.faa-spin.animated
+          %p{:style => "color: yellow; font-size: 70px;"}
+            %i.far.fas.fa-star.faa-flash.animated
+      - if user_signed_in?
+        %p.content__right__down--messages
+          MyPageは今まで自分の投稿が見れるよ
+      - else
+        %p.content__right__down--messages
+          ログインしたらMyPageが使えるよ！！
+      - if user_signed_in?
+        = image_tag src="/assets/gettyimages-1655.jpg", width:"340", height:"75", class: "content__right__down--picture2"
+        = link_to "MyPage", "/users/#{current_user.id}", class: "content__right__down--post"
+      - else
+        .line__user__one
+      
+  .footer-new.neck__action
+      
+    
+

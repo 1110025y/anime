@@ -69,7 +69,7 @@
           position: absolute;
           font-weight: bold;
           right: 494px;
-          top: 135px;
+          top: 145px;
           text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
         }
         &--post1{
@@ -79,8 +79,8 @@
           color: #f8f8ff;
           position: absolute;
           font-weight: bold;
-          right: 475px;
-          top: 135px;
+          right: 470px;
+          top: 145px;
           text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
         }
         &--post2{
@@ -91,21 +91,21 @@
           font-weight: bold;
           text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
           position: absolute;
-          top: 135px;
-          right: 133px;
+          top: 145px;
+          right: 125px;
         }
         .picture12{
           position: relative;
-          top: 3px;
+          top: 10px;
           border-radius: 15px 15px 15px 15px / 15px 15px 15px 15px;
-          border: 1px solid #F0F8FF;
+          border: 10px solid #FFF5EE;
           
         }
         .picture14{
           position: relative;
-          top: 3px;
+          top: 10px;
           border-radius: 15px 15px 15px 15px / 15px 15px 15px 15px;
-          border: 1px solid #F0F8FF;
+          border:  10px solid #FFF5EE;
           margin: 20px;
         }
       }
@@ -128,98 +128,92 @@
         .side__Contents__btn4{
           display: block;
           position: relative;
-          left: -15%;
+          left: 2%;
           height: 180px;
           width: 153%;
-          margin-bottom: 15px;
-          border: 5px solid wheat;
-          border-radius: 25px 100px 50px 25px / 25px 100px 50px 25px;
-          box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
           .picture4{
             position: absolute;
-            border-radius: 25px 100px 50px 25px / 25px 100px 50px 25px;
+            top: -10px;
+            left: -50px;
+          }
+          .picture5{
+            position: absolute;
+            top: 130px;
+            left: -20px;
           }
           .paragraph4{
             position: absolute;
-            color: wheat;
+            top: 125px;
+            left: 145px;
+            color: #FFFF99;
             font-weight: bold;
-            font-size: 40px;
-          }
-        }
-        .side__Contents__btn{
-          display: block;
-          height: 178px;
-          width: 147%;
-          left: -15%;
-          margin-bottom: 15px;
-          position: absolute;
-          position: relative;
-          border: 5px solid wheat;
-          border-radius: 25px 100px 50px 25px / 25px 100px 50px 25px;
-          box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
-          .picture2{
-            position: absolute;
-            border-radius: 25px 100px 50px 25px / 25px 100px 50px 25px;
-          }
-          .paragraph1{
-            position: absolute;
-            color: white;
-            font-weight: bold;
-            font-size: 40px;
+            text-shadow: 0 0 10px red, 0 0 2px white, 0 0 2px white;
+            font-size: 60px;
           }
         }
         .side__Contents__btn2{
           display: block;
-          position: absolute;
           position: relative;
-          height: 176px;
-          width: 140%;
-          left: -15%;
-          margin-bottom: 20px;
-          border: 5px solid wheat;
+          bottom: -200px;
+          left: -10%;
+          height: 205px;
+          width: 173%;
+          border: 10px solid #FFF5EE;
           border-radius: 25px 100px 50px 25px / 25px 100px 50px 25px;
-          box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+          box-shadow: 1px 10px 5px 2px rgba(207, 17, 17, 0.2);
           .picture3{
             position: absolute;
             border-radius: 25px 100px 50px 25px / 25px 100px 50px 25px;
           }
+          .picture6{
+            position: absolute;
+            top: 20px;
+            left: 5px;
+          }
           .paragraph2{
             position: absolute;
-            color: black;
+            top: 50px;
+            right: 80px;
+            color: #FFF5EE;
             font-weight: bold;
-            font-size: 40px;
+            font-size: 50px;
+            border-bottom: 4px solid #FF0461;
+            text-shadow: 0 0 10px rgb(10, 9, 9), 0 0 2px rgb(12, 11, 11), 0 0 2px white;
+
           }
         }
         .side__Contents__btn3{
           display: block;
-          position: absolute;
-          height: 160px;
-          width: 130%;
-          left: -15%;
-          margin-bottom: 35px;
+          position: relative;
+          height: 170px;
+          width: 150%;
+          bottom: -220px;
+          left: -10%;
           text-align: center;
           font-size:50px;
           text-decoration: none;
-          border: 5px solid wheat;
+          border: 5px solid #FFF5EE;
           color: white;
           display: flex;
           justify-content: center;
           align-items: center;
-          box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.2);
+          box-shadow: 5px 10px 10px 10px rgba(207, 17, 17, 0.2);
           border-radius: 25px 100px 50px 25px / 25px 100px 50px 25px;
           .picture{
-            position: relative;
+            position: absolute;
             border-radius: 25px 100px 50px 25px / 25px 100px 50px 25px;
           }
           .paragraph{
             position: absolute;
-            right: 60px;
+            right: 50px;
+            top: 40px;
             border-bottom: 4px solid #FF0461;
             font-weight: bold;
           }
           .Contents__btn--icon{
-            left: 20px;
+            left: 180px;
             position: absolute;
+            font-size: 50px;
             color: blue;
           }
         }
@@ -227,8 +221,8 @@
     }
     .picture10{
       border-radius: 50px 50px 50px 50px / 35px 35px 35px 35px;
-      margin-left: 20%;
-      margin-top: 20%;
+      margin-left: -1%;
+      margin-top: 5%;
     }
     &__right{
       width: 20%;
@@ -254,9 +248,10 @@
         margin-top: 20px;
       }
       &__under{
+        width: 500px;
         height: 35%;
-        margin-left: 10px;
         bottom: -23%;
+        right: 100px;
         position: relative;
         .picture5{
           position: relative;
@@ -267,18 +262,18 @@
           position: absolute;
           color: red;
           top: 105px;
-          left: 57px;
+          left: 90px;
           font-weight: bold;
-          font-size: 45px;
+          font-size: 50px;
           text-shadow: 0 0 2px white, 0 0 40px white, 0 0 1px white;
         }
         &--title2{
           position: absolute;
           color: red;
           top: 175px;
-          left: 120px;
+          left: 160px;
           font-weight: bold;
-          font-size: 45px;
+          font-size: 50px;
           text-shadow: 0 0 2px white, 0 0 40px white, 0 0 1px white;
         }
       }
