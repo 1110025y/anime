@@ -6,37 +6,33 @@
     .header__action
       %a.header__action--catalogue{:href => "/tweets"} 投稿一覧に戻る
   .neck
-  .content
-    .content__show
-      .content_show__post{:style => "background-image: url(#{@tweet.image});"}
-        .content__show_post__box
+  .contenter
+    .contenter__show
+      .contenter__show__post{:style => "background-image: url(#{@tweet.image});"}
+        .content__show__post__box
           %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"60", height:"60"
-          .menu
-            .menu-title ▼
-            .sub-menu
-              %ul
-                %li
-                  = link_to '編集する', edit_tweet_path(@tweet.id),  method: :get
-                %li
-                  = link_to '削除する', tweet_path(@tweet.id),  method: :delete
-        %p= @tweet.text
-        %span.name
-          = @tweet.name
-    .container
+      .contenter__show__texter
+        .contenter__show__texter--box
+          %span.name
+            = @tweet.name
+          %p= @tweet.text
+    .contenter__comment
       - if current_user
-        = form_with(model: [@tweet, @comment], local: true) do |form|
-          = form.text_area :text, placeholder: "コメントする", rows: "2"
-          = form.submit "SEND"
+        = form_with(model: [@tweet, @comment], class: "contenter__comment__form", local: true) do |form|
+          = form.text_area :text, placeholder: "コメントする", rows: "10", class: "contenter__comment__form--area"
+          = form.submit "SEND", class: "contenter__comment__form--send"
       - else
         %strong
           %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
-      .comments
-        %h4 ＜コメント一覧＞
-        - if @comments
-          - @comments.each do |comment|
-            %p
-              %strong
-                = link_to comment.user.name, "/users/#{comment.user_id}"
-                = comment.text
-    .neck
-    .footer
+      .contenter__comment__list
+        .contenter__comment__list__box
+          %h4.contenter__comment__list__box__title ＜コメント一覧＞
+          - if @comments
+            - @comments.each do |comment|
+              %p.div
+                %strong.ddder
+                  = link_to comment.user.name, "/users/#{comment.user_id}", class: "usered"
+                  %span ：
+                  = comment.text
+  .neck
+  .footer

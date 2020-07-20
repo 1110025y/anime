@@ -50,7 +50,7 @@
         %p{:style => "color: orange; font-size: 100px;"}
           %i.far.fa-hand-point-down.faa-vertical.animated
       .content__right__up
-        = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"430", height:"95", class: "content__right__up__picture5"
+        = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"460", height:"95", class: "content__right__up__picture5"
         = link_to  "投稿する", new_tweet_path, method: :get ,class: "content__right__up__post"
       .content__right__down
         = image_tag src="/assets/1538.png", width:"600", height:"180", class: "content__right__down--picture"
@@ -69,7 +69,7 @@
           MyPageは今まで自分の投稿が見れるよ
       - else
         %p.content__right__down--messages
-          ログインしたらMyPageが使えるよ！！
+          ログインしたら投稿やMyPageが使えるよ
       - if user_signed_in?
         = image_tag src="/assets/gettyimages-1655.jpg", width:"340", height:"75", class: "content__right__down--picture2"
         = link_to "MyPage", "/users/#{current_user.id}", class: "content__right__down--post"
