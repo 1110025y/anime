@@ -10,7 +10,6 @@
     .contenter__show
       .contenter__show__post{:style => "background-image: url(#{@tweet.image});"}
         .content__show__post__box
-          %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"60", height:"60"
       .contenter__show__texter
         .contenter__show__texter--box
           %span.name
@@ -25,12 +24,12 @@
         %strong
           %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
       .contenter__comment__list
-        .contenter__comment__list__box
+        .contenter__comment__list__box{:style => "background-image: url(https://pbs.twimg.com/media/DL3aIP1VoAAQ1EI.jpg);"}
           %h4.contenter__comment__list__box__title ＜コメント一覧＞
           - if @comments
             - @comments.each do |comment|
               %p.div
-                %strong.ddder
+                %strong
                   = link_to comment.user.name, "/users/#{comment.user_id}", class: "usered"
                   %span ：
                   = comment.text

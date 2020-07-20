@@ -10,6 +10,7 @@
     .container__box
       = form_with(model: @blog, local: true, class: "container__form") do |form|
         %h3.container__form__title POST FORM
+        = form.text_field :name, placeholder: "Name", class: "container__form--personal"
         = form.text_field :title, placeholder: "Title", class: "container__form--personal"
         = form.label :start_time, class: "time"
         .container__form__time

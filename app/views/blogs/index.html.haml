@@ -19,17 +19,17 @@
           %table
             %thead
               %tr
+                %th 名前 
                 %th タイトル
                 %th 時間
-                %th{:colspan => "4"}
+                %th{:colspan => "5"}
             %tbody
               - @blogs.each do |blog|
                 %tr
+                  %td= blog.name
                   %td= blog.title
                   %td= blog.start_time.strftime("%Y-%m-%d %H:%M")
-                  %td= link_to 'Show', blog
-                  %td= link_to 'Edit', edit_blog_path(blog.id)
-                  %td= link_to 'Destroy',blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' }
+                  %td= link_to '詳細', blog
       .content-box__left--down
         .content-box__left--down--image
           = image_tag src="/assets/7002421.jpeg", width:"380", height:"330", class: "picture20"

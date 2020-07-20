@@ -11,7 +11,7 @@
   .content
     .content__left
       .content__left__board
-      .content__left__row
+      .content__left__row{:style => "background-image: url(https://img.moegirl.org/common/0/01/3714665.jpg);"}
         - @tweets.each do |tweet|
           .content__left__row__box
             .content__left__row__box__text
@@ -23,18 +23,32 @@
               %a{:href => "/tweets/#{tweet.id}", class: "content__left__row__box__text--message"}
                 = tweet.text
             .content__left__row__box__icon
-              %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"70", height:"70"
-              .menu
-                .menu-title ▼
-                .sub-menu
-                  %ul
-                    %li 
-                      = link_to '詳細表示', tweet_path(tweet.id),  method: :get
-                  - if user_signed_in? && current_user.id == tweet.user.id
-                    %li
-                      = link_to '編集する', edit_tweet_path(tweet.id),  method: :get, class: "ulli" 
-                    %li
-                      = link_to '駆逐する', tweet_path(tweet.id),  method: :delete, class: "ulli1" 
+              - if current_user.id == tweet.user.id
+                %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"70", height:"70"
+                .menu
+                  .menu-title ▼
+                  .sub-menu
+                    %ul
+                      %li 
+                        = link_to '詳細表示', tweet_path(tweet.id),  method: :get
+                    - if user_signed_in? && current_user.id == tweet.user.id
+                      %li
+                        = link_to '編集する', edit_tweet_path(tweet.id),  method: :get, class: "ulli" 
+                      %li
+                        = link_to '駆逐する', tweet_path(tweet.id),  method: :delete, class: "ulli1" 
+              - else
+                %span= image_tag src='/assets/68590354.png', class: "pppp" ,width:"70", height:"70"
+                .menu
+                  .menu-title ▼
+                  .sub-menu
+                    %ul
+                      %li 
+                        = link_to '詳細表示', tweet_path(tweet.id),  method: :get
+                    - if user_signed_in? && current_user.id == tweet.user.id
+                      %li
+                        = link_to '編集する', edit_tweet_path(tweet.id),  method: :get, class: "ulli" 
+                      %li
+                        = link_to '駆逐する', tweet_path(tweet.id),  method: :delete, class: "ulli1" 
     .content__right
       %div{:style => "height:30px;", class: "content__right__style"}
         %span#switch_jq.content__right__style Post Bulletin Board 
@@ -44,26 +58,17 @@
         %p{:style => "color: orange; font-size: 100px;"}
           %i.far.fa-hand-point-down.faa-vertical.animated
         %p{:style => "color: orange; font-size: 100px;"}
-          %i.far.fa-hand-point-down.faa-vertical.animated
+          %i.far.fa-hand-point-down.faa-flash.animated
         %p{:style => "color: orange; font-size: 100px;"}
           %i.far.fa-hand-point-down.faa-vertical.animated
         %p{:style => "color: orange; font-size: 100px;"}
-          %i.far.fa-hand-point-down.faa-vertical.animated
+          %i.far.fa-hand-point-down.faa-flash.animated
       .content__right__up
         = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"460", height:"95", class: "content__right__up__picture5"
         = link_to  "投稿する", new_tweet_path, method: :get ,class: "content__right__up__post"
       .content__right__down
-        = image_tag src="/assets/1538.png", width:"600", height:"180", class: "content__right__down--picture"
-        = image_tag src="/assets/01507fd3.jpg", width:"400", height:"380", class: "content__right__down--picture1"
-        .div
-          %p{:style => "color: orange; font-size: 70px;"}
-            %i.far.far.fa-star.faa-spin.animated
-          %p{:style => "color: yellow; font-size: 70px;"}
-            %i.far.fas.fa-star.faa-flash.animated
-          %p{:style => "color: orange; font-size: 70px;"}
-            %i.far.far.fa-star.faa-spin.animated
-          %p{:style => "color: yellow; font-size: 70px;"}
-            %i.far.fas.fa-star.faa-flash.animated
+        = image_tag src="/assets/1538.png", width:"650", height:"220", class: "content__right__down--picture"
+        = image_tag src="/assets/01507fd3.jpg", width:"460", height:"400", class: "content__right__down--picture1"
       - if user_signed_in?
         %p.content__right__down--messages
           MyPageは今まで自分の投稿が見れるよ
