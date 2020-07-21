@@ -23,32 +23,18 @@
               %a{:href => "/tweets/#{tweet.id}", class: "content__left__row__box__text--message"}
                 = tweet.text
             .content__left__row__box__icon
-              - if current_user.id == tweet.user.id
-                %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"70", height:"70"
-                .menu
-                  .menu-title ▼
-                  .sub-menu
-                    %ul
-                      %li 
-                        = link_to '詳細表示', tweet_path(tweet.id),  method: :get
-                    - if user_signed_in? && current_user.id == tweet.user.id
-                      %li
-                        = link_to '編集する', edit_tweet_path(tweet.id),  method: :get, class: "ulli" 
-                      %li
-                        = link_to '駆逐する', tweet_path(tweet.id),  method: :delete, class: "ulli1" 
-              - else
-                %span= image_tag src='/assets/68590354.png', class: "pppp" ,width:"70", height:"70"
-                .menu
-                  .menu-title ▼
-                  .sub-menu
-                    %ul
-                      %li 
-                        = link_to '詳細表示', tweet_path(tweet.id),  method: :get
-                    - if user_signed_in? && current_user.id == tweet.user.id
-                      %li
-                        = link_to '編集する', edit_tweet_path(tweet.id),  method: :get, class: "ulli" 
-                      %li
-                        = link_to '駆逐する', tweet_path(tweet.id),  method: :delete, class: "ulli1" 
+              %span= image_tag src='/assets/68589768.png', class: "pppp" ,width:"40", height:"40"
+              .menu
+                .menu-title ▼
+                .sub-menu
+                  %ul
+                    %li 
+                      = link_to '詳細表示', tweet_path(tweet.id),  method: :get
+                  - if user_signed_in? && current_user.id == tweet.user.id
+                    %li
+                      = link_to '編集する', edit_tweet_path(tweet.id),  method: :get, class: "ulli" 
+                    %li
+                      = link_to '駆逐する', tweet_path(tweet.id),  method: :delete, class: "ulli1"  
     .content__right
       %div{:style => "height:30px;", class: "content__right__style"}
         %span#switch_jq.content__right__style Post Bulletin Board 

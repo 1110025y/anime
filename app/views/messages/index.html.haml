@@ -46,7 +46,10 @@
       .main__right__above
         %p{:style => "color: blue; font-size: 340px;"}
           %i.far.fa-comment.faa-float.animated
-        .main__right__above--name 投稿されるかな
+      - if user_signed_in?
+        .main__right__above--name 投稿してね！
+      - else
+        .main__right__above--name ログインしてね
       .main__right__middle
       .main__right__under
         = link_to "/tweets" do
