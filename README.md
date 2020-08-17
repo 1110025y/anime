@@ -3,8 +3,8 @@ This was created during my time as a student at [tech-camp](https://tech-camp.in
 # Les enfants,venez par ici !
 ![Shimokita.php](https://i.gyazo.com/12738af2c871d44924408a4a1034c4eb.jpg)
 This tool can collect friends with the same hobbies
-
-
+<br>
+<br>
 # Description
 This tool has a schedule function and a posting function
 It is a tool to make friends using it
