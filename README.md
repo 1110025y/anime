@@ -2,7 +2,7 @@ This was created during my time as a student at [tech-camp](https://tech-camp.in
 
 # Les enfants,venez par ici !
 ![Shimokita.php](https://i.gyazo.com/12738af2c871d44924408a4a1034c4eb.jpg)
-This tool can create and gather many friends with the same hobbies
+This tool can create and gather many friends with the same hobbies.
 Also, it is an application that can get a lot of event information.
 <br>
 <br>
@@ -10,7 +10,7 @@ Also, it is an application that can get a lot of event information.
 
 # Features
 Limited to people with hobbies such as anime and games.
-People with the such hobbies can gather, make friends, and go out to play together
+People with the such hobbies can gather, make friends, and go out to play together.
 <br>
 <br>
 <br>
