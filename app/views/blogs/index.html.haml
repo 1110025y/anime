@@ -1,8 +1,8 @@
 .wrapper
   .header
     %h1.header__title
-      %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
-      %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
     .header__action
       %a.header__action--catalogue{:href => "/tweets"} 投稿一覧にいく
   .content-box
@@ -13,13 +13,13 @@
           %span#switch_jq.content-box__left--up--image__style EVENT CALENDAR
           %p.content-box__left--up--image__style--title 
             あなたのオススメのイベントを書き込んでね！
-          = image_tag src="/assets/fukidashi_125-1.png", width:"750", height:"550"
+          = image_tag src="/assets/fukidashi_125-1.png", width:"790", height:"650"
         .content-box__left--up--memo
           %h1 新着の書き込み
           %table
             %thead
               %tr
-                %th 名前 
+                %th 名前
                 %th タイトル
                 %th 時間
                 %th{:colspan => "5"}
@@ -32,7 +32,7 @@
                   %td= link_to '詳細', blog
       .content-box__left--down
         .content-box__left--down--image
-          = image_tag src="/assets/7002421.jpeg", width:"380", height:"330", class: "picture20"
+          = image_tag src="/assets/7002421.jpeg", width:"420", height:"400", class: "picture20"
         .content-box__left--down--arrow
           - if user_signed_in?
             %p{:style => "color: orange; font-size: 100px;"}

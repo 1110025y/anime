@@ -1,8 +1,8 @@
 .wrapper
   .line
     .line__box
-      %p.line__box--title KoRONaDoyo
-      %p.line__box--title ZeninSyouGO!!
+      %p.line__box--title Les enfants, 
+      %p.line__box--title venez par ici !
     .line__user
       - if user_signed_in?
         .line__user__one
@@ -18,28 +18,38 @@
           = image_tag src="/assets/derfrtgtbvvb.jpg", width:"370", height:"80",class: "picture12"
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "head__right__contents--post1"
           = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"370", height:"80",class: "picture14"
-          = link_to  "投稿する", new_tweet_path, method: :get ,class: "head__right__contents--post2"
+          = link_to  "プロフィール登録", new_message_path, method: :get ,class: "head__right__contents--post2"
       - else
         .head__right__contents          
           = image_tag src="/assets/gettyimage.jpg", width:"370", height:"80",class: "picture12"
           = link_to "ログイン", new_user_session_path, method: :get, class: "head__right__contents--post"
           = image_tag src="/assets/frfrgtb.jpg", width:"370", height:"80",class: "picture14"
-          = link_to "新規登録", new_user_registration_path, method: :get, class: "head__right__contents--post2"
+          = link_to "新規登録", new_user_registration_path, method: :get, class: "head__right__contents--post3"
   .main 
     .main__side
       .main__side__Contents
         .main__side__Contents__message
-        = link_to "/blogs", class: "side__Contents__btn4" do
-          = image_tag src="/assets/blank-calendar.jpg", width:"600", height:"380", class: "picture4"
-          = image_tag src="/assets/77443557_220x284.png", width:"140", height:"170", class: "picture5"
-          .paragraph4 EVENT CALENDAR
-        = link_to "/blogs", class: "side__Contents__btn2" do
-          = image_tag src="/assets/777.jpg", width:"530", height:"185", class: "picture3"
-          .paragraph2 Profile
-        = link_to "https://twitter.com/l18cZZ7zxDicomD", class: "side__Contents__btn3" do
-          = image_tag src="/assets/1234.jpg", width:"470", height:"150", class: "picture"
-          = icon('fab', 'twitter', class: "Contents__btn--icon")
-          .paragraph Twitter
+        - if user_signed_in?
+          = link_to "/blogs", class: "side__Contents__btn4" do
+            = image_tag src="/assets/blank-calendar.jpg", width:"600", height:"380", class: "picture4"
+            = image_tag src="/assets/77443557_220x284.png", width:"140", height:"170", class: "picture5"
+            .paragraph4 EVENT CALENDAR
+          = link_to "/messages/#{current_user.id}", class: "side__Contents__btn2" do
+            = image_tag src="/assets/777.jpg", width:"530", height:"185", class: "picture3"
+            .paragraph2 Profile
+          = link_to "https://twitter.com/l18cZZ7zxDicomD", class: "side__Contents__btn3" do
+            = image_tag src="/assets/1234.jpg", width:"470", height:"150", class: "picture"
+            = icon('fab', 'twitter', class: "Contents__btn--icon")
+            .paragraph Twitter
+        - else
+          = link_to "/blogs", class: "side__Contents__btn4" do
+            = image_tag src="/assets/blank-calendar.jpg", width:"600", height:"380", class: "picture4"
+            = image_tag src="/assets/77443557_220x284.png", width:"140", height:"170", class: "picture5"
+            .paragraph4 EVENT CALENDAR
+          = link_to "https://twitter.com/l18cZZ7zxDicomD", class: "side__Contents__btn3" do
+            = image_tag src="/assets/1234.jpg", width:"470", height:"150", class: "picture"
+            = icon('fab', 'twitter', class: "Contents__btn--icon")
+            .paragraph Twitter
     .main__image
       = image_tag src="/assets/1185012i.jpeg", width:"770", height:"750",class: "picture10"
     .main__right

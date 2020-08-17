@@ -1,0 +1,33 @@
+.wrapper
+  .header
+    %h1.header__title--a
+      %a.header__title--a--post2{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--a--post2{:href => "http://localhost:3000/"} venez par ici !
+  .neck
+  .profile-content
+    .profile-content__left
+      .profile--name
+        %p.profile-title name：
+        .profile--family-name
+          = @message.family_name
+        .profile--first-name
+          = @message.first_name
+      .profile--kana
+        .profile--family-kana
+          = @message.family_name_kana
+        .profile--first-kana
+          = @message.first_name_kana
+      .profile--introduction
+        %p.profile--introduction--title 自己紹介
+        .profile--introduction--contents
+          = @message.introduction
+      .profile--hobby
+        %p.profile--hobby--title 趣味：
+        .profile--hobby--contents
+          = @message.hobby
+      .profile--skill
+        %p.profile--skill--title 趣味：
+        .profile--skill--contents
+          = @message.skill
+    .profile-content__right
+  .footer-show

@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
   resources :blogs
+  resources :messages
 
 end

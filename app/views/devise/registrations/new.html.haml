@@ -1,9 +1,8 @@
 .wrapper
   .header
     %h1.header__title
-      %a.header__title--post1{:href => "http://localhost:3000/"} KoRONaDoyo
-      %a.header__title--post1{:href => "http://localhost:3000/"} ZeninSyouGO!!
-  
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
   .sign-up__form
     %div{:style => "height:30px;", class: "sign-in__form__style"}
       %span#switch_jq.sign-up__form__style__title Welcome to Our Room！!
@@ -11,7 +10,7 @@
       = render "devise/shared/error_messages", resource: resource
       .field
         .field
-          = f.text_field :name, autofocus: true, placeholder: "Name", autocomplete: "name", class: "field__contents", maxlength: "6"
+          = f.text_field :name, autofocus: true, placeholder: "NicName", autocomplete: "name", class: "field__contents", maxlength: "6"
         .field
           = f.email_field :email, autofocus: true, placeholder: "Email", autocomplete: "email", class: "field__contents"
         .field
