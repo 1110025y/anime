@@ -1,25 +1,38 @@
 This was created during my time as a student at [tech-camp](https://tech-camp.in/) 
 
 # Les enfants,venez par ici !
-This tool can create and gather many friends with the same hobbies.<br>
-Also, it is an application that can get a lot of event information.
+このツールは、同じ趣味を持つ多くの友達を作り集めることができます。<br>
+また、たくさんのイベント情報を取得できるアプリです。
 ![Shimokita.php](https://i.gyazo.com/12738af2c871d44924408a4a1034c4eb.jpg)
 <br>
 <br>
 <br>
 
+# Production background
+このツールを作ったのは、今コロナウイルスで自宅にいる機会が増えました。
+その為、家でNetflixやAmazonプライムでアニメを見る人が急増、また家でゲームする人が増えPlayStation等の
+ゲーム機が売り切れ状態となっています。
+これらを趣味をする人が増えたと言う事で、これらを熱く語り合う掲示板のような場が有ればと思い制作しました。
+しかし、それだけでは思い、これらに関係する自分な好きなイベント等を書き込めるカレンダー機能を追加しました。
+これにより、自分の好きなイベントをカレンダーに書き込み、そのイベントを知って貰う、そして投稿機能を使い、
+一緒に行きたい人を集う、それに興味を持った人・行きたいと思った人がその投稿にコメントするっといった流れで使用して貰う事も
+出来るようになりました。
+この機能が、イベント自粛で停滞しているイベント業界の、コロナ終息後のイベント活性化の貢献につながればと思っています。
+
+
 # Features
-Limited to people with hobbies such as anime and games.<br>
-People with the such hobbies can gather, make friends, and go out to play together.
+このツールの使用はアニメやゲームなどが趣味の方に限ります。<br>
+そのような趣味を持つ人々が集まり、友達を作り、一緒に遊びに出かけることができます。
 <br>
 <br>
 <br>
 
 # Description
-This tool has a schedule function and a posting function.<br>
-A schedule function can write an event in the schedule.<br>
-In the post function, you can write a comment for each post.<br>
-If you use this tool, you can make friends with the same common hobbies.
+このツールには、カレンダー機能と投稿機能があります。<br>
+このスケジュール機能は、誰でもカレンダー にイベント等を書き込むことができます。<br>
+また、誰でもそのイベントの詳細を内容を知ることが出来ます。<br>
+投稿機能では、投稿することは勿論のこと、投稿ごとにコメントを書くことができます。<br>
+この２つの機能を使えば、同じ趣味の友達を作ることが出来るでしょう。
 <br>
 <br>
 <br>
@@ -86,3 +99,64 @@ Rails 6.0.3.2
 
 # License
 [MIT](https://choosealicense.com/licenses/mit/) 
+
+
+<br>
+<br>
+<br>
+<br>
+
+# DB設計
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|
+|password|string|null: false|
+|nickname|string|null: false|
+### Association
+- has_many :tweets
+- has_many :comments
+- has_one :message, dependent: :destroy
+
+## tweetsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|text||
+|text|text||
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- has_many :comments
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
+|tweet_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :tweet
+- belongs_to :user
+
+## messagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|first_name|string|null: false|
+|family_name|string|null: false|
+|first_name_kana|string|null: false|
+|family_name_kana|string|null: false|
+|introduction|text|null: false|
+|hobby|string|null: false|
+|skill|string|null: false|
+|likes|string|null: false|
+|user|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+
+## blogsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|content|text|null: false|
+|title|integer|null: false|
+|start_time|datetime|null: false|
