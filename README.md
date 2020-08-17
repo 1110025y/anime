@@ -13,12 +13,14 @@ This was created during my time as a student at [tech-camp](https://tech-camp.in
 その為、家でNetflixやAmazonプライムでアニメを見る人が急増、また家でゲームする人が増えPlayStation等の、<br>
 ゲーム機が売り切れ状態となっています。<br>
 これらを趣味をする人が増えたと言う事で、これらを熱く語り合う掲示板のような場が有ればと思い制作しました。<br>
-しかし、それだけでは思い、これらに関係する自分な好きなイベント等を書き込めるカレンダー機能を追加しました。<br>
+しかしそれだけでは思い、これらに関係する自分な好きなイベント等を書き込めるカレンダー機能を追加しました。<br>
 これにより、自分の好きなイベントをカレンダーに書き込み、そのイベントを知って貰う、そして投稿機能を使い、<br>
 一緒に行きたい人を集う、それに興味を持った人・行きたいと思った人がその投稿にコメントするっといった流れで<br>
 使用して貰う事も出来るようになりました。<br>
 この機能が、イベント自粛で停滞しているイベント業界の、コロナ終息後のイベント活性化の貢献につながればと思っています。<br>
-
+<br>
+<br>
+<br>
 
 # Features
 このツールの使用はアニメやゲームなどが趣味の方に限ります。<br>
@@ -118,6 +120,7 @@ Rails 6.0.3.2
 - has_many :tweets
 - has_many :comments
 - has_one :message, dependent: :destroy
+<br>
 
 ## tweetsテーブル
 |Column|Type|Options|
@@ -128,6 +131,7 @@ Rails 6.0.3.2
 ### Association
 - belongs_to :user
 - has_many :comments
+<br>
 
 ## commentsテーブル
 |Column|Type|Options|
@@ -138,6 +142,7 @@ Rails 6.0.3.2
 ### Association
 - belongs_to :tweet
 - belongs_to :user
+<br>
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -153,6 +158,7 @@ Rails 6.0.3.2
 |user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
+<br>
 
 ## blogsテーブル
 |Column|Type|Options|
