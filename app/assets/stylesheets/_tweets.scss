@@ -244,7 +244,7 @@
         text-decoration: none;
         position: absolute;
         top: 41%;
-        right: 380px;
+        right: 400px;
         font-size: 31px;
         color: #FFF5EE;
         font-weight: bold;
@@ -262,7 +262,7 @@
       &--picture1{
         position: absolute;
         right: 25px;
-        bottom: 30px;
+        bottom: 45px;
       }
       .div{
         display: flex;
@@ -287,8 +287,8 @@
       }
       &--post{
         position: absolute;
-        right: 480px;
-        bottom: 75px;
+        right: 500px;
+        bottom: 85px;
         text-decoration: none;
         font-size: 28px;
         color: #FFF5EE;
@@ -519,6 +519,9 @@ li{
   height: 50px;
   width: 100%;
 }
-
+.footer-new.neck__action1{
+  background-color: #FF0461;
+  height: 50px;
+}
 
 
