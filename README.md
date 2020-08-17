@@ -9,16 +9,16 @@ Also, it is an application that can get a lot of event information.
 <br>
 
 # Features
-Limited to people with hobbies such as anime and games.
+Limited to people with hobbies such as anime and games.<br>
 People with the such hobbies can gather, make friends, and go out to play together.
 <br>
 <br>
 <br>
 
 # Description
-This tool has a schedule function and a posting function.
-A schedule function can write an event in the schedule.
-In the post function, you can write a comment for each post.
+This tool has a schedule function and a posting function.<br>
+A schedule function can write an event in the schedule.<br>
+In the post function, you can write a comment for each post.<br>
 If you use this tool, you can make friends with the same common hobbies.
 <br>
 <br>
