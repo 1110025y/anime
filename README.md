@@ -2,7 +2,6 @@ This was created during my time as a student at [tech-camp](https://tech-camp.in
 
 # Les enfants,venez par ici !
 This tool can create and gather many friends with the same hobbies.
-
 Also, it is an application that can get a lot of event information.
 ![Shimokita.php](https://i.gyazo.com/12738af2c871d44924408a4a1034c4eb.jpg)
 
