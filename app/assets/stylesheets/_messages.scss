@@ -78,7 +78,7 @@
           color: #f8f8ff;
           position: absolute;
           font-weight: bold;
-          right: 470px;
+          right: 485px;
           top: 145px;
           text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
         }
@@ -91,7 +91,7 @@
           text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white;
           position: absolute;
           top: 145px;
-          right: 75px;
+          right: 85px;
 
         }
         &--post3{
@@ -453,6 +453,20 @@
       }
     }
     .profile--skill{
+      height: 70px;
+      display: flex;
+      background-color: white;
+      margin-top: 15px;
+      padding: 10px 0 0 20px;
+      &--title{
+        font-size: 30px;
+      }
+      &--contents{
+        font-size: 30px;
+        margin-left: 20px;
+      }
+    }
+    .profile--likes{
       height: 70px;
       display: flex;
       background-color: white;
