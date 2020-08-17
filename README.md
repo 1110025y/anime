@@ -1,6 +1,4 @@
 This was created during my time as a student at [tech-camp](https://tech-camp.in/) 
-<br>
-<br>
 
 # Les enfants,venez par ici !
 ![Shimokita.php](https://i.gyazo.com/12738af2c871d44924408a4a1034c4eb.jpg)
