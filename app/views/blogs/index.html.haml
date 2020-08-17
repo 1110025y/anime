@@ -16,12 +16,12 @@
           = image_tag src="/assets/fukidashi_125-1.png", width:"790", height:"650"
         .content-box__left--up--memo
           %h1 新着の書き込み
-          %table
+          %table.th4
             %thead
               %tr
-                %th 名前
-                %th タイトル
-                %th 時間
+                %th.th1 名前
+                %th.th2 タイトル
+                %th.th3 時間
                 %th{:colspan => "5"}
             %tbody
               - @blogs.each do |blog|
