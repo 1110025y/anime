@@ -8,6 +8,5 @@ This tool can collect friends with the same hobbies
 This tool has a schedule function and a posting function
 It is a tool to make friends using it
 
-
-
-
+# Demo
+![Shimokita.php](https://i.gyazo.com/db64d429c7cbb1cd120974aa8ab295f7.gif)
