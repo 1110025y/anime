@@ -1,0 +1,37 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+    .header__action
+      %a.header__action--catalogue{:href => "/tweets"} 投稿一覧に戻る
+  .neck
+  .contenter
+    .contenter__show
+      .contenter__show__post{:style => "background-image: url(#{@tweet.image});"}
+        .content__show__post__box
+      .contenter__show__texter
+        .contenter__show__texter--box
+          %span.name
+            = @tweet.name
+          %p= @tweet.text
+    .contenter__comment
+      - if current_user
+        = form_with(model: [@tweet, @comment], class: "contenter__comment__form", local: true) do |form|
+          = form.text_area :text, placeholder: "コメントする", rows: "10", class: "contenter__comment__form--area"
+          = form.submit "SEND", class: "contenter__comment__form--send"
+      - else
+        %strong
+          %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+      .contenter__comment__list
+        .contenter__comment__list__box{:style => "background-image: url(https://pbs.twimg.com/media/DL3aIP1VoAAQ1EI.jpg);"}
+          %h4.contenter__comment__list__box__title ＜コメント一覧＞
+          - if @comments
+            - @comments.each do |comment|
+              %p.div
+                %strong
+                  = link_to comment.user.name, "/users/#{comment.user_id}", class: "usered"
+                  %span ：
+                  = comment.text
+  .neck
+  .footer

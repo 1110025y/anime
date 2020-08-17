@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Anime
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application'
+    -#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    %script{:src => "http://code.jquery.com/jquery-latest.js"}
+    %script{:src => "”https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js”", :type => "”text/javascript”"}
+    %link{:href => "https://use.fontawesome.com/releases/v5.0.6/css/all.css", :rel => "stylesheet"}/
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css", :media => "all", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/core/main.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/daygrid/main.min.css", :rel => "stylesheet"}/
+  %body
+    = yield

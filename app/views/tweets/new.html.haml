@@ -1,0 +1,23 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+    .header__action
+      %a.header__action--catalogue{:href => "/tweets"} 投稿一覧に戻る
+  .neck
+  .container
+    .container__box
+      = form_with(model: @tweet, local: true, class: "container__form") do |form|
+        %h3.container__form__title POST FORM
+        = form.text_field :name, placeholder: "Name", class: "container__form--personal"
+        = form.text_field :image, class: "container__form--personal"
+        = form.label :image, class: 'container__form__image' do
+          = icon('far', 'image',)
+          = form.file_field :image, class: 'file-btn'
+        = form.text_area :text, placeholder: "message" , rows: "10", class: "container__form--message"
+        = form.submit "SEND", class: "container__form--send"
+  .footer
+
+
+

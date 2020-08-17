@@ -1,0 +1,32 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+    .header__action
+      %a.header__title--post2{:href => "/blogs"} EVENT
+      %a.header__title--post2{:href => "/blogs"} CALENDAR
+  .neck
+  .details
+    .details__box
+      .details__box__imege
+        = image_tag src="/assets/298.jpeg", width:"460", height:"555", class: "details__box__imege__picture"
+      .details__box__content
+        %p#notice= notice
+        .details__box__content__title
+          %strong タイトル ：
+          = @blog.title
+        .details__box__content__time
+          %strong Name ：
+          %a{:href => user_path}
+            = @blog.name
+        .details__box__content__time
+          %strong 時間 ：
+          = @blog.start_time.strftime("%Y-%m-%d %H:%M")
+        .details__box__content__message
+          %strong 内容 ：：
+          = @blog.content
+        = link_to 'Edit', edit_blog_path(@blog)
+        = link_to 'Destroy',blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' }
+        = link_to 'Back', blogs_path
+  .footer

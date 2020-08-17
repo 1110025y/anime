@@ -1,0 +1,56 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+    .header__action
+      %a.header__action--catalogue{:href => "/tweets"} 投稿一覧にいく
+  .content-box
+    .content-box__left
+      .content-box__left--up
+        .content-box__left--up--image
+          %div{:style => "height:30px;", class: "content-box__left--up--image__style"}
+          %span#switch_jq.content-box__left--up--image__style EVENT CALENDAR
+          %p.content-box__left--up--image__style--title 
+            あなたのオススメのイベントを書き込んでね！
+          = image_tag src="/assets/fukidashi_125-1.png", width:"790", height:"650"
+        .content-box__left--up--memo
+          %h1 新着の書き込み
+          %table.th4
+            %thead
+              %tr
+                %th.th1 名前
+                %th.th2 タイトル
+                %th.th3 時間
+                %th{:colspan => "5"}
+            %tbody
+              - @blogs.each do |blog|
+                %tr
+                  %td= blog.name
+                  %td= blog.title
+                  %td= blog.start_time.strftime("%Y-%m-%d %H:%M")
+                  %td= link_to '詳細', blog
+      .content-box__left--down
+        .content-box__left--down--image
+          = image_tag src="/assets/7002421.jpeg", width:"420", height:"400", class: "picture20"
+        .content-box__left--down--arrow
+          - if user_signed_in?
+            %p{:style => "color: orange; font-size: 100px;"}
+              %i.fas.fa-angle-double-down.faa-vertical.animated
+            %p{:style => "color: orange; font-size: 100px;"}
+              %i.fas.fa-angle-double-down.faa-vertical.animated
+            %p{:style => "color: orange; font-size: 100px;"}
+              %i.fas.fa-angle-double-down.faa-vertical.animated
+        .content-box__left--down--path
+          - if user_signed_in?
+            = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"350", height:"80", class: "content-box__left--down--path--picture25"
+            = link_to 'writing', new_blog_path, class: "content-box__left--down--path--letter"
+          - else
+            %h1 書き込むにはログインお願いします！
+    .content-box__right
+      = month_calendar events: @blogs do |date, blogs|
+        = date.day
+        - blogs.each do |blog|
+          %div
+            = link_to blog.title, blog
+  .footer-blog

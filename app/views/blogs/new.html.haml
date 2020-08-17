@@ -1,0 +1,20 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+    .header__action
+      %a.header__action--catalogue{:href => "/blogs"} 前のページに戻る
+  .neck
+  .container
+    .container__box
+      = form_with(model: @blog, local: true, class: "container__form") do |form|
+        %h3.container__form__title POST FORM
+        = form.text_field :name, placeholder: "Name", class: "container__form--personal"
+        = form.text_field :title, placeholder: "Title", class: "container__form--personal"
+        = form.label :start_time, class: "time"
+        .container__form__time
+          = form.datetime_select :start_time, class: "container__form--personal"
+        = form.text_area :content, placeholder: "content", class: "container__form--message"
+        = form.submit "SEND", class: "container__form--send"
+  .footer

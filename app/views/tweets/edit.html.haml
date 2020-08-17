@@ -1,0 +1,15 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+  .neck
+  .container
+    .container__box
+      = form_with(model: @tweet, local: true, class: "container__form") do |form|
+        %h3.container__form__title POST FORM
+        = form.text_field :name, placeholder: "name", class: "container__form--personal"
+        = form.text_field :image, placeholder: "Image Url", class: "container__form--personal"
+        = form.text_area :text, placeholder: "message" , rows: "10", class: "container__form--message"
+        = form.submit "SEND", class: "container__form--send"
+  .footer
