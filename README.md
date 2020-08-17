@@ -22,6 +22,9 @@ It is a tool to make friends using it
 
 
 # Downloading and installing steps
+```
+git clone https://github.com/aocattleya/hoge.git
+```
 
 
 
