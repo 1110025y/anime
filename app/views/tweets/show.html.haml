@@ -9,11 +9,13 @@
   .contenter
     .contenter__show
       .contenter__show__post{:style => "background-image: url(#{@tweet.image});"}
-        .content__show__post__box
-      .contenter__show__texter
-        .contenter__show__texter--box
+      .contenter__show--box
+        .text-name
+          %p 名前：
           %span.name
             = @tweet.name
+        .text-content
+          %p 内容：
           %p= @tweet.text
     .contenter__comment
       - if current_user

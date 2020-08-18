@@ -433,24 +433,21 @@ li{
       border: 3px solid #ddd;
       margin: 20px 0;
       margin-left: 50px;
-      .content__show_post__box{
-        color: white;
-        .pppp{
-          display: block;
-        }
-      }
     }
-    &__texter{
+    &--box{
+      margin-left: 50px;
+      border: 2px solid grey;
+      background-color: white;
+      width: 89%;
       height: 200px;
-      font-weight: bold;
-      font-size: 20px;
-      &--box{
-        margin-left: 50px;
-        border: 2px solid grey;
-        background-color: white;
-        width: 89%;
-        height: 150px;
-        overflow: scroll;
+      overflow: scroll;
+      .text-name{
+        display: flex;
+        font-size: 20px;
+      }
+      .text-content{
+        display: flex;
+        font-size: 23px;
       }
     }
   }
