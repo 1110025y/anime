@@ -1,12 +1,29 @@
-= form_with(model: @blog, local: true) do |form|
-  .title
-    = form.label :title
-    = form.text_field :title
-  .time
-    = form.label :start_time
-    = form.datetime_select :start_time
-  .content
-    = form.label :content
-    = form.text_field :content
-  .submit
-    = form.submit
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+    .header__action
+      %a.header__title--post2{:href => "/blogs"} EVENT
+      %a.header__title--post2{:href => "/blogs"} CALENDAR
+  .neck
+  .details
+    .details__box
+      .details__box__left
+        = form_with(model: @blog, local: true) do |form|
+          %p.title-s 編集ページです！
+          .title
+            %h3.box-title タイトル
+            = form.text_field :title, class: "box-title__form"
+          .start_time
+            %h3.box-start_time 時間
+            = form.datetime_select :start_time
+          .contented
+            %h3.box-content 内容
+            = form.text_area :content, class: "box-title__form"
+          .submit
+            = form.submit "編集する", class: "btn-hs"
+      .details__box__right
+        = image_tag src="/assets/dc5qv20-fullview.png", width:"480", height:"655", class: "pict"
+  .footer
+    
