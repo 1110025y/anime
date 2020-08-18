@@ -18,15 +18,14 @@
           = @blog.title
         .details__box__content__time
           %strong Name ：
-          %a{:href => user_path}
+          %a{:href => user_path, class: "btn-name"}
             = @blog.name
         .details__box__content__time
           %strong 時間 ：
           = @blog.start_time.strftime("%Y-%m-%d %H:%M")
         .details__box__content__message
-          %strong 内容 ：：
+          %strong 内容 ：
           = @blog.content
-        = link_to 'Edit', edit_blog_path(@blog)
-        = link_to 'Destroy',blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' }
-        = link_to 'Back', blogs_path
+        .details__box__content__back
+          = link_to '戻る', blogs_path, class: "btn-back"
   .footer

@@ -9,6 +9,7 @@ class CreateMessages < ActiveRecord::Migration[6.0]
       t.string :hobby
       t.string :skill
       t.string :likes
+      t.integer :user_id
 
       t.timestamps
     end

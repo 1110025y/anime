@@ -29,7 +29,10 @@
                   %td= blog.name
                   %td= blog.title
                   %td= blog.start_time.strftime("%Y-%m-%d %H:%M")
-                  %td= link_to '詳細', blog
+                  %td= link_to '詳細', blog, class: "td-ss"
+                  - if user_signed_in? && current_user.id == blog.user.id
+                    %td= link_to '編集', edit_blog_path(blog.id), class: "td-ss"
+                    %td= link_to '削除',blog_path(blog.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "td-ss"
       .content-box__left--down
         .content-box__left--down--image
           = image_tag src="/assets/7002421.jpeg", width:"420", height:"400", class: "picture20"
@@ -44,7 +47,7 @@
         .content-box__left--down--path
           - if user_signed_in?
             = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"350", height:"80", class: "content-box__left--down--path--picture25"
-            = link_to 'writing', new_blog_path, class: "content-box__left--down--path--letter"
+            = link_to '書き込む', new_blog_path, class: "content-box__left--down--path--letter"
           - else
             %h1 書き込むにはログインお願いします！
     .content-box__right
