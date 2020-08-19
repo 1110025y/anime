@@ -4,7 +4,7 @@
       %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
       %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
     .header__action
-      %a.header__title--post2{:href => "/tweets"} Back to post list
+      %a.header__title--post2{:href => "/tweets"} Back to Bulletin Board
   .neck
   .contenter
     .contenter__show
@@ -13,6 +13,7 @@
         .text-name
           %p 名前：
           %span.name
+          %a{:href => message_path, class: "btn-name"}
             = @tweet.name
         .text-content
           %p 内容：

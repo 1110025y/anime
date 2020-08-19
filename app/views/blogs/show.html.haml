@@ -4,8 +4,7 @@
       %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
       %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
     .header__action
-      %a.header__title--post2{:href => "/blogs"} EVENT
-      %a.header__title--post2{:href => "/blogs"} CALENDAR
+      %a.header__title--post2{:href => "/tweets"} Go to Bulletin Board 
   .neck
   .details
     .details__box
@@ -18,7 +17,7 @@
           = @blog.title
         .details__box__content__time
           %strong Name ：
-          %a{:href => user_path, class: "btn-name"}
+          %a{:href => message_path, class: "btn-name"}
             = @blog.name
         .details__box__content__time
           %strong 時間 ：
