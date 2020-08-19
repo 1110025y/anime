@@ -286,8 +286,8 @@
         }
         .post-text{
           position: absolute;
-          right: 515px;
-          bottom: 170px;
+          right: 535px;
+          bottom: 180px;
           text-decoration: none;
           font-size: 28px;
           color: #FFF5EE;
@@ -308,8 +308,8 @@
         }
         .post-myp{
           position: absolute;
-          right: 515px;
-          bottom: 78px;
+          right: 535px;
+          bottom: 90px;
           text-decoration: none;
           font-size: 28px;
           color: #FFF5EE;
@@ -533,6 +533,7 @@ li{
 .contents.search{
   width: 100%;
   height: 100%;
+  display: flex;
   .search.box{
     width: 60%;
     height: 100%;
@@ -572,7 +573,48 @@ li{
       }
     }
   }
+  .search.images{
+    width: 30%;
+    height: 100%;
+    .image-title{
+      margin: 50px 0 0 40px;
+      .content-style{
+        color: red;
+        font-size: 50px;
+        font-style: italic;
+        font-weight: bold;
+        text-shadow: 0 0 2px #FFFF00, 0 0 3px #FFFF00, 0 0 3px #FFFF00;
+      }
+    }
+    .image-up{
+      width: 100%;
+      height: 33%;
+      margin-top: 10px;
+      .image-huki{
+        position: relative;
+        left: 40px;
+        top: 40px;
+      }
+      .image-text{
+        font-size: 45px;
+        text-shadow: 0 0 2px white, 0 0 1px white, 0 0 1px white;
+        position: absolute;
+        right: 12%;
+        top: 40%;
+      }
+    }
+    .image-down{
+      width: 100%;
+      height: 30%;
+      .image-pit{
+        position: absolute;
+        right: 150px;
+        
+      }
+    }
+  }
 }
+
 
 
 
