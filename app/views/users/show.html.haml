@@ -20,4 +20,19 @@
               %p 内容：
               %p= tweet.text
     .contents.user__right
+      .right-list
+        %p.right-list--name
+          = @name
+          さんのイベント投稿一覧
+        - @blogs.each do |blog|
+          .blog-content
+            .blog-content__title
+              %strong タイトル ：
+              = blog.title
+            .blog-content__time
+              %strong 時間 ：
+              = blog.start_time.strftime("%Y-%m-%d %H:%M")
+            .blog-content__message
+              %strong 内容 ：
+              = blog.content
   .footer-user

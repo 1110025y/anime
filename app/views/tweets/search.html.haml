@@ -1,9 +1,23 @@
-.contents.row
-  - @tweets.each do |tweet|
-    .content-boxes
-      %a{:href => "/tweets/#{tweet.id}"}
-        .contents.picture{:style => "background-image: url(#{tweet.image});"}
-      .contents.text
-        %p 内容：
-        %p= tweet.text
-    
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+    .header__action
+      %a.header__title--post2{:href => "/tweets"} Back to Bulletin Board
+  .neck
+  .contents.search
+    .search.box
+      - @tweets.each do |tweet|
+        .contents__search
+          .contents__search__post{:style => "background-image: url(#{tweet.image});"}
+          .contents__search--box
+            .text-name
+              %p 名前：
+              %span.name
+                = tweet.name
+            .text-content
+              %p 内容：
+              %p= tweet.text
+  .neck
+  .footer
