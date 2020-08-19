@@ -1,0 +1,35 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+  .neck
+  .Section
+    .boxes
+      .Section-1
+        = image_tag src="c2608e7d3ba.jpg", width:"420", height:"800"
+      .Section-2
+        %p.title プロフィール編集ページだよ！
+        = form_with model: @message, id: 'new_address', class: 'new_address', local: :true do |f|
+          .requier
+            送付先氏名
+          = f.text_field :family_name, placeholder: "例)山田", class: 'input-form1'
+          = f.text_field :first_name, placeholder: "例)彩", class: 'input-form1'
+          .requier
+            送付先氏名(かな)
+          = f.text_field :family_name_kana, placeholder: "例)やまだ", class: 'input-form1'
+          = f.text_field :first_name_kana, placeholder: "例)あや", class: 'input-form1'
+          .requier
+            自己紹介
+          = f.text_area :introduction, placeholder: "例)初めまして！山田彩です！", class: 'input-form2'
+          .requier
+            趣味
+          = f.text_field :hobby, placeholder: "例)アニメ観賞", class: 'input-form3'
+          .requier
+            特技
+          = f.text_field :skill, placeholder: "例)スマホの早打ち", class: 'input-form3'
+          .requier
+            好きなモノ・好きなコト
+          = f.text_field :likes, placeholder: "例)ゲーム", class: 'input-form3'
+          = f.submit "登録する", class: 'btn-default btn-mail'
+  .footer-message
