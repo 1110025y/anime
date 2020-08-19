@@ -1,0 +1,31 @@
+.wrapper
+  .header
+    %h1.header__title
+      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
+      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+    .header__action
+      %a.header__title--post2{:href => "/tweets"} Back to Bulletin Board
+  .neck
+  .contents.search
+    .search.box
+      - @tweets.each do |tweet|
+        .contents__search
+          .contents__search__post{:style => "background-image: url(#{tweet.image});"}
+          .contents__search--box
+            .text-name
+              %p 名前：
+              %span.name
+                = tweet.name
+            .text-content
+              %p 内容：
+              %p= tweet.text
+    .search.images
+      .image-title
+        %span.content-style Successful search
+      .image-up
+        = image_tag src="/assets/fukidashi119.jpg", width:"600", height:"300", class: "image-huki"
+        %p.image-text 検索結果です！!
+      .image-down
+        = image_tag src="/assets/05.jpg", width:"550", height:"500", class: "image-pit"
+  .neck
+  .footer

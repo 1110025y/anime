@@ -1,6 +1,6 @@
 This was created during my time as a student at [tech-camp](https://tech-camp.in/) 
 
-# Les enfants,venez par ici !
+# 「アプリ名：Les enfants,venez par ici !（フランス語で「皆集まれ！」て意味です）」
 このツールは、同じ趣味を持つ多くの友達を作り集めることができます。<br>
 また、たくさんのイベント情報を取得できるアプリです。
 ![Shimokita.php](https://i.gyazo.com/12738af2c871d44924408a4a1034c4eb.jpg)

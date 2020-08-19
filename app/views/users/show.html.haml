@@ -4,15 +4,35 @@
       %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
       %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
     .header__action
-      %a.header__action--catalogue{:href => "/tweets"} 投稿一覧に戻る
-  .contents.row
-    %p.contents.title
-      = @name
-      さんの投稿一覧
-    - @tweets.each do |tweet|
-      .content_post{:style => "background-image: url(#{tweet.image});"}
-        %a{:href => "/tweets/#{tweet.id}"}
-          %p= tweet.text
-        %span.name= tweet.name
+      %a.header__title--post2{:href => "/tweets"} Back to post list
   .neck
-  .footer
+  .contents.user
+    .contents.user__left
+      .left-list
+        %p.left-list--name
+          = @name
+          さんの投稿一覧
+        - @tweets.each do |tweet|
+          .content-boxes
+            %a{:href => "/tweets/#{tweet.id}"}
+              .contents.picture{:style => "background-image: url(#{tweet.image});"}
+            .contents.text
+              %p 内容：
+              %p= tweet.text
+    .contents.user__right
+      .right-list
+        %p.right-list--name
+          = @name
+          さんのイベント投稿一覧
+        - @blogs.each do |blog|
+          .blog-content
+            .blog-content__title
+              %strong タイトル ：
+              = blog.title
+            .blog-content__time
+              %strong 時間 ：
+              = blog.start_time.strftime("%Y-%m-%d %H:%M")
+            .blog-content__message
+              %strong 内容 ：
+              = blog.content
+  .footer-user
