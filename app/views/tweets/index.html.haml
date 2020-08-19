@@ -39,7 +39,7 @@
       %div{:style => "height:30px;", class: "content__right__style"}
         %span#switch_jq.content__right__style Post Bulletin Board 
       %p.content__right--title 
-        下の投稿ボタンから投稿してね！
+        下の検索ボタンから皆の投稿の検索が出来るよ！
       .content__right__head
         %p{:style => "color: orange; font-size: 100px;"}
           %i.far.fa-hand-point-down.faa-vertical.animatedO
@@ -50,22 +50,27 @@
         %p{:style => "color: orange; font-size: 100px;"}
           %i.far.fa-hand-point-down.faa-flash.animated
       .content__right__up
-        = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"460", height:"95", class: "content__right__up__picture5"
-        = link_to  "投稿する", new_tweet_path, method: :get ,class: "content__right__up__post"
+        = form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form|
+          = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+          = form.submit "検索", class: "search-btn"
       .content__right__down
-        = image_tag src="/assets/1538.png", width:"650", height:"220", class: "content__right__down--picture"
-        = image_tag src="/assets/01507fd3.jpg", width:"430", height:"390", class: "content__right__down--picture1"
-      - if user_signed_in?
-        %p.content__right__down--messages
-          MyPageは今まで自分の投稿が見れるよ
-      - else
-        %p.content__right__down--messages
-          ログインしたら投稿やMyPageが使えるよ
-      - if user_signed_in?
-        = image_tag src="/assets/gettyimages-1655.jpg", width:"340", height:"75", class: "content__right__down--picture2"
-        = link_to "MyPage", "/users/#{current_user.id}", class: "content__right__down--post"
-      - else
-        .line__user__one
+        = image_tag src="/assets/1538.png", width:"650", height:"200", class: "content__right__down--picture"
+        = image_tag src="/assets/01507fd3.jpg", width:"410", height:"390", class: "content__right__down--picture1"
+        - if user_signed_in?
+          %p.content__right__down--messages
+            MyPageは今まで自分の投稿が見れるよ
+        - else
+          %p.content__right__down--messages
+            ログインしたら投稿やMyPageが使えるよ
+        - if user_signed_in?
+          .post.btn
+            = image_tag src="/assets/vitnvimdinvdnckv.jpg", width:"360", height:"75", class: "picture-box_post"
+            = link_to  "投稿する", new_tweet_path, method: :get ,class: "post-text"
+          .myp.btn
+            = image_tag src="/assets/gettyimages-1655.jpg", width:"360", height:"75", class: "picture-box_myp"
+            = link_to "MyPage", "/users/#{current_user.id}", class: "post-myp"
+        - else
+          .line__user__one
       
   .footer-new.neck__action1
       

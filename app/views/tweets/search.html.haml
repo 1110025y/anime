@@ -1,0 +1,9 @@
+.contents.row
+  - @tweets.each do |tweet|
+    .content-boxes
+      %a{:href => "/tweets/#{tweet.id}"}
+        .contents.picture{:style => "background-image: url(#{tweet.image});"}
+      .contents.text
+        %p 内容：
+        %p= tweet.text
+    
