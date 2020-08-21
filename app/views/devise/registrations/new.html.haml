@@ -1,13 +1,13 @@
 .wrapper
   .header
     %h1.header__title
-      %a.header__title--post1{:href => "http://localhost:3000/"} Les enfants,
-      %a.header__title--post1{:href => "http://localhost:3000/"} venez par ici !
+      %a.header__title--post1{:href => root_path} Les enfants,
+      %a.header__title--post1{:href => root_path} venez par ici !
   .sign-up__form
     %div{:style => "height:30px;", class: "sign-in__form__style"}
       %span#switch_jq.sign-up__form__style__title Welcome to Our Room！!
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
+    = form_for(@user, url: user_registration_path) do |f|
+      = render "devise/shared/error_messages", resource: @user
       .field
         .field
           = f.text_field :name, autofocus: true, placeholder: "NicName", autocomplete: "name", class: "field__contents", maxlength: "6"
@@ -22,7 +22,7 @@
         .field
           = f.password_field :password_confirmation, placeholder: "Password_Confirmation", autocomplete: "new-password", class: "field__contents"
         .actions
-          = f.submit "Sign up", class: "field__submit"
+          = f.submit "Next", class: "field__submit"
   
   .box_container
     .images_holder
